@@ -18,7 +18,7 @@ class Tree: ObservableObject {
         self.decision5 = decision5
     }
     
-    func creation() {
+    func creation(count: Int) {
         let tree = GKDecisionTree(attribute: "Start" as NSString)
         
         var die: Bool = false
@@ -32,8 +32,10 @@ class Tree: ObservableObject {
             "Start": NSNumber(value: decision1)
         ])
         print(resultado1 ?? "1 não deu certo")
-        self.resultado = resultado1?.description ?? "Aqui nao foi"
-        print("esse e o resultado: \(resultado)")
+        if count == 1 {
+            self.resultado = resultado1?.description ?? "O 1 não foi"
+            print("esse e o resultado: \(resultado)")
+        }
         
         if decision1 {
             // Alone or Group
@@ -45,7 +47,10 @@ class Tree: ObservableObject {
                 "Grass": NSNumber(value: decision2)
             ])
             print(resultado2 ?? "2 não deu certo")
-
+            if count == 2 {
+                self.resultado = resultado2?.description ?? "O 2 não foi"
+                print("esse e o resultado: \(resultado)")
+            }
             
             if decision2 {
                 let attack = alone?.createBranch(value: NSNumber(value: true), attribute: "Attack" as NSString)
@@ -57,7 +62,11 @@ class Tree: ObservableObject {
                     "Alone": NSNumber(value: decision3)
                 ])
                 print(resultado3 ?? "3 não deu certo")
-
+                if count == 3 {
+                    self.resultado = resultado3?.description ?? "O 3 não foi"
+                    print("esse e o resultado: \(resultado)")
+                }
+                
                 if decision3 {
                     let die = attack?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
                     let die2 = attack?.createBranch(value: NSNumber(value: false), attribute: "Die" as NSString)
@@ -71,8 +80,11 @@ class Tree: ObservableObject {
                         "Alone": NSNumber(value: false),
                         "Run": NSNumber(value: decision4)
                     ])
-
                     print(resultado4 ?? "4 não deu certo")
+                    if count == 4 {
+                        self.resultado = resultado4?.description ?? "O 4 não foi"
+                        print("esse e o resultado: \(resultado)")
+                    }
                     
                     if decision4 {
                         let die3 = mud?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
@@ -89,7 +101,10 @@ class Tree: ObservableObject {
                             "Shelter": NSNumber(value: decision5)
                         ])
                         print(resultado5 ?? "5 não deu certo")
-
+                        if count == 5 {
+                            self.resultado = resultado5?.description ?? "O 5 não foi"
+                            print("esse e o resultado: \(resultado)")
+                        }
                         
                         if decision5 {
                             let die5 = egg?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)

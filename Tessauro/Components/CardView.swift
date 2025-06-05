@@ -59,7 +59,7 @@ struct CardView: View {
                             .padding(.bottom)
                             .multilineTextAlignment(.center)
                         ZStack {
-                            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                            RoundedRectangle(cornerRadius: 25.0)
                                 .foregroundColor(.lightBackground)
                                 .frame(width: 330, height: 350)
                             Image(scene)
@@ -72,10 +72,10 @@ struct CardView: View {
                 HStack {
                     Button(action: {
                         decision = true
-                        isDone = true
+                        isDone.toggle()
                     }, label: {
                         ZStack {
-                            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                            RoundedRectangle(cornerRadius: 25.0)
                                 .frame(width: 150, height: 50)
 
                                 Text(option1)
@@ -88,7 +88,7 @@ struct CardView: View {
                     Spacer()
                     Button(action: {
                         decision = false
-                        isDone = true
+                        isDone.toggle()
                     }, label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)

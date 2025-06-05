@@ -12,7 +12,7 @@ struct Indicator: View {
         HStack (spacing: 1){
             Text("Velocidade")
                 .font(.system(size: 16))
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .fontWeight(.bold)
             Image(systemName: "suit.diamond.fill")
             Image(systemName: "suit.diamond.fill")
             Image(systemName: "suit.diamond.fill")
