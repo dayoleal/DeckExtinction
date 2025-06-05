@@ -29,7 +29,7 @@ struct LoadingView: View {
                     .progressViewStyle(.circular)
                     .padding(.top, 15)
                     .scaleEffect(1.5) .tint(.lightBackground)
-                }
+            }
         }
     }
 }
