@@ -54,7 +54,7 @@ struct FinalCardView: View {
                     }
                 }
                 Button(action: {
-                    dinodexView()
+                    DinodexView()
                 },
                        label: {
                     ZStack {
