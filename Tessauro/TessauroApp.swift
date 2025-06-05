@@ -4,7 +4,7 @@ import SwiftUI
 struct TessauroApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(die: false, win: false)
         }
     }
 }
