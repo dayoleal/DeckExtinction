@@ -86,7 +86,9 @@ struct cardView: View {
                     })
                     
                     Spacer()
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {
+                        
+                    }, label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                                 .frame(width: 150, height: 50)

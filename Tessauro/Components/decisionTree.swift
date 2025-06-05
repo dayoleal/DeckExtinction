@@ -1,13 +1,14 @@
 import Foundation
 import GameplayKit
+import Combine
 
-struct Tree {
+class Tree: ObservableObject {
     var decision1: Bool
     var decision2: Bool
     var decision3: Bool
     var decision4: Bool
     var decision5: Bool
-    
+    @Published public var resultado: String = "por enquanto nenhum"
     
     init(_ decision1: Bool, _ decision2: Bool, _ decision3: Bool, _ decision4: Bool, _ decision5: Bool) {
         self.decision1 = decision1
@@ -30,9 +31,9 @@ struct Tree {
         let resultado1 = tree.findAction(forAnswers: [
             "Start": NSNumber(value: decision1)
         ])
-//        print(decision1)
         print(resultado1 ?? "1 não deu certo")
-
+        self.resultado = resultado1?.description ?? "Aqui nao foi"
+        print("esse e o resultado: \(resultado)")
         
         if decision1 {
             // Alone or Group
@@ -43,7 +44,6 @@ struct Tree {
                 "Start": NSNumber(value: true),
                 "Grass": NSNumber(value: decision2)
             ])
-//            print(decision2)
             print(resultado2 ?? "2 não deu certo")
 
             
@@ -71,7 +71,7 @@ struct Tree {
                         "Alone": NSNumber(value: false),
                         "Run": NSNumber(value: decision4)
                     ])
-//                    print(decision4)
+
                     print(resultado4 ?? "4 não deu certo")
                     
                     if decision4 {
@@ -88,7 +88,6 @@ struct Tree {
                             "Run": NSNumber(value: false),
                             "Shelter": NSNumber(value: decision5)
                         ])
-//                        print(decision5)
                         print(resultado5 ?? "5 não deu certo")
 
                         
@@ -101,32 +100,10 @@ struct Tree {
                     }
                 }
             }
+        } else {
+            let die7 = forestScenery?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
         }
-            
-            
-//            // Alone Attack
-//            let attackGrass = aloneGrass?.createBranch(value: NSNumber(value: true), attribute: "Attack" as NSString)
-//            let dieGrass = attackGrass?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
-//            
-//            // Alone Run
-//            let runGrass = aloneGrass?.createBranch(value: NSNumber(value: false), attribute: "Run" as NSString)
-//            
-//            let mudGrass = runGrass?.createBranch(value: NSNumber(value: true), attribute: "Mud" as NSString)
-//            let shelterGrass = runGrass?.createBranch(value: NSNumber(value: false), attribute: "Shelter" as NSString)
-//            
-//            // Mud Die
-//            let dieMudGrass = mudGrass?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
-//            
-//            // Shelter Egg
-//            let egg = shelterGrass?.createBranch(value: NSNumber(value: true), attribute: "Egg" as NSString)
-//            let plant = shelterGrass?.createBranch(value: NSNumber(value: false), attribute: "Plant" as NSString)
-//            
-//            // Plant Win
-//            let winPlant = plant?.createBranch(value: NSNumber(value: true), attribute: "Win" as NSString)
-        
-        
-        //print(resultado1 ?? "nada")
+
     }
     
 }
-

@@ -10,20 +10,25 @@ struct ContentView: View {
     var win: Bool
     
     @State var decisionTree: Tree? = nil
+    @State var action: Bool = false
+    @State var result: String = ""
     
     var body: some View {
         VStack {
             Button(action: {
-                if let decisionTree = decisionTree {
-                    decisionTree.creation()
-                }
-            }) {
+                    action.toggle()
+            }){
                 Text("oi")
             }
+                Text(result)
         }
         .padding()
-        .onAppear(){
+        .onChange(of: action) { oldValue, newValue in
             decisionTree = Tree(decision1, decision2, decision3, decision4, decision5)
+            decisionTree?.creation()
+        }
+        .onChange(of: decisionTree?.resultado ?? "a") { oldValue, newValue in
+            result = newValue
         }
     }
 }
