@@ -1,27 +1,24 @@
-//
-//  cardView.swift
-//  Tessauro
-//
-//  Created by Aluno Mack on 02/06/25.
-//
-
 import SwiftUI
 
-struct cardView: View {
+struct CardView: View {
     var scenery: String
     var scene: String
     var option1: String
     var option2: String
     var imgWidth: CGFloat
     var imgHeight: CGFloat
+    @Binding var decision: Bool
+    @Binding var isDone: Bool
     
-    init(scenery: String, scene: String, option1: String, option2: String, imgWidth: CGFloat, imgHeight: CGFloat) {
+    init(scenery: String, scene: String, option1: String, option2: String, imgWidth: CGFloat, imgHeight: CGFloat, decision: Binding<Bool>, isDone: Binding<Bool>) {
         self.scenery = scenery
         self.scene = scene
         self.option1 = option1
         self.option2 = option2
         self.imgWidth = imgWidth
         self.imgHeight = imgHeight
+        self._decision = decision
+        self._isDone = isDone
     }
     
     var body: some View {
@@ -73,7 +70,10 @@ struct cardView: View {
                     }
                 }
                 HStack {
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {
+                        decision = true
+                        isDone = true
+                    }, label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                                 .frame(width: 150, height: 50)
@@ -87,7 +87,8 @@ struct cardView: View {
                     
                     Spacer()
                     Button(action: {
-                        
+                        decision = false
+                        isDone = true
                     }, label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)

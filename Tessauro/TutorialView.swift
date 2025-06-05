@@ -27,7 +27,7 @@ struct TutorialView: View {
                     HStack {
                         Spacer()
                         NavigationLink {
-                            dinodexView()
+                            DinodexView()
                         } label: {
                             ZStack {
                                 Circle()
@@ -75,7 +75,7 @@ struct TutorialView: View {
                     }
                     
                     Button(action: {
-                        dinodexView()
+                        DinodexView()
                     },
                            label: {
                         ZStack {

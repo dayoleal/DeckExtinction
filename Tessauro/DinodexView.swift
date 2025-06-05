@@ -1,14 +1,8 @@
-//
-//  dinodexView.swift
-//  Tessauro
-//
-//  Created by Aluno Mack on 02/06/25.
-//
-
 import SwiftUI
-
-struct dinodexView: View {
+    
+struct DinodexView: View {
     var body: some View {
+        
         ZStack {
             ZStack {
                 Color.lightBackground
@@ -100,5 +94,5 @@ struct dinodexView: View {
 }
 
 #Preview {
-    dinodexView()
+    DinodexView()
 }
