@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var decision1: Bool = true
-    @State var decision2: Bool = false
-    @State var decision3: Bool = false
-    @State var decision4: Bool = false
-    @State var decision5: Bool = false
+    @State var decision1: Int = 0
+    @State var decision2: Int = 0
+    @State var decision3: Int = 0
+    @State var decision4: Int = 0
+    @State var decision5: Int = 0
     @State var isDone: Bool = false
     @State var count: Int = 0
     
@@ -23,8 +23,8 @@ struct ContentView: View {
                 CardView(
                     scenery: "Enquanto você se alimenta, rugidos familiares ecoam no ambiente e uma manada de plateossauros passa por perto. Alguns olhares curiosos surgem. Quer tentar se juntar a eles ou seguir seu caminho em silêncio",
                     scene: "group",
-                    option1: "Se juntar",
-                    option2: "Ignorar",
+                    option1: "Ignorar",
+                    option2: "Se juntar",
                     imgWidth: 370,
                     imgHeight: 300,
                     decision: $decision2,
@@ -34,14 +34,42 @@ struct ContentView: View {
                 CardView(
                     scenery: "O céu escurecia quando surge um Herrerasauro! À sua direita, rochas escarpadas oferecem escape se conseguir escalar a tempo. Ou você pode desferir um golpe de cauda.",
                     scene: "BrownDinosaur",
-                    option1: "Correr",
-                    option2: "Atacar",
+                    option1: "Atacar",
+                    option2: "Correr",
                     imgWidth: 250,
                     imgHeight: 280,
                     decision: $decision3,
                     isDone: $isDone
                 )
-                
+            case "Run":
+                CardView(
+                    scenery: "Uma tempestade se aproxima quando você avista Plantas medicinais. Deseja arriscar-se na lama para adquirí-la ou seguir para uma caverna próxima, onde outros herbívoros já se aglomeram para abrigo?",
+                    scene: "BrownDinossaur",
+                    option1: "Lama",
+                    option2: "Abrigo",
+                    imgWidth: 300,
+                    imgHeight: 350,
+                    decision: $decision4,
+                    isDone: $isDone
+                )
+            case "Shelter":
+                CardView(
+                    scenery: "A tempestade rugia lá fora, sem sinais de trégua. Um rugido faminto ecoava em suas entranhas. Entre as rochas, apenas tufos de samambaia ressecada pareciam disponíveis. Mas lá fora, um ninho destruído revela um ovo intacto, perto o suficiente para você alcançá-lo.",
+                    scene: "egg",
+                    option1: "Ovo",
+                    option2: "Samambaia",
+                    imgWidth: 400,
+                    imgHeight: 350,
+                    decision: $decision5,
+                    isDone: $isDone
+                )
+            case "Plant":
+                FinalCardView(
+                    scenario: "Parabéns, Sobrevivente do Triássico! Suas escolhas sábias sob tempestades, ataques de predadores e escassez de alimento provaram que você domina a arte da sobrevivência pré-histórica. Cada decisão estratégica moldou um herbívoro verdadeiramente resiliente.\n\nSua jornada continua... mas agora, com um dinossauro da era jurassica/ cretácia!",
+                    scene: "loadingDino",
+                    width: 200,
+                    height: 200
+                )
             default:
                 Text("não")
             }
@@ -64,6 +92,7 @@ struct ContentView: View {
         }
         .onChange(of: isDone) { oldValue, newValue in
             count += 1
+            decisionTree = Tree(decision1, decision2, decision3, decision4, decision5)
             if let decision = decisionTree {
                 decision.creation(count: count)
             }

@@ -7,10 +7,10 @@ struct CardView: View {
     var option2: String
     var imgWidth: CGFloat
     var imgHeight: CGFloat
-    @Binding var decision: Bool
+    @Binding var decision: Int
     @Binding var isDone: Bool
     
-    init(scenery: String, scene: String, option1: String, option2: String, imgWidth: CGFloat, imgHeight: CGFloat, decision: Binding<Bool>, isDone: Binding<Bool>) {
+    init(scenery: String, scene: String, option1: String, option2: String, imgWidth: CGFloat, imgHeight: CGFloat, decision: Binding<Int>, isDone: Binding<Bool>) {
         self.scenery = scenery
         self.scene = scene
         self.option1 = option1
@@ -32,7 +32,7 @@ struct CardView: View {
                         Image(systemName: "flame.fill")
                             .font(.title)
                             .foregroundColor(.orangeBright)
-                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                        RoundedRectangle(cornerRadius: 25.0)
                             .frame(width: 180, height: 14)
                             .foregroundColor(.lightBackground)
                     }
@@ -71,7 +71,7 @@ struct CardView: View {
                 }
                 HStack {
                     Button(action: {
-                        decision = true
+                        decision = 1
                         isDone.toggle()
                     }, label: {
                         ZStack {
@@ -87,11 +87,11 @@ struct CardView: View {
                     
                     Spacer()
                     Button(action: {
-                        decision = false
+                        decision = -1
                         isDone.toggle()
                     }, label: {
                         ZStack {
-                            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                            RoundedRectangle(cornerRadius: 25.0)
                                 .frame(width: 150, height: 50)
                                 Text(option2)
                                     .font(.headline)
