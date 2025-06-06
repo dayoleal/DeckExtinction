@@ -1,22 +1,6 @@
-//
-//  TutorialView.swift
-//  Tessauro
-//
-//  Created by Aluno Mack on 03/06/25.
-//
-
 import SwiftUI
 
 struct TutorialView: View {
-    var bulletPoints: [String] = [
-        "A cada rodada finalizada com sucesso você desbloqueará um novo dinossauro.",
-        "Durante o jogo serão apresentadas situações em que você deve escolher entre duas opções.",
-        "Use os botões inferiores esquerdo e direito da tela para tomar sua decisão.",
-        "Suas escolhas afetam seu nível de energia, que é essencial para a sua sobrevivência."
-    ]
-    
-    
-  
     var body: some View {
         NavigationStack {
             ZStack {
@@ -45,24 +29,38 @@ struct TutorialView: View {
                         ZStack {
                             Rectangle()
                                 .foregroundColor(.brownSecondary)
-                                .frame(height: 600)
+                                .frame(height: 850)
                             
-                            VStack (spacing: 20) {
+                            VStack (spacing: 10) {
                                 Text("TUTORIAL")
                                     .font(.title)
                                     .fontWeight(.bold)
                                 
-                                Text("Objetivo:")
+                                
+                                Text("\nObjetivo:")
                                     .font(.title3)
                                     .fontWeight(.bold)
                                 
                                 Text("Sobreviva a Era Mesozoica assumindo o papel de um dinossauro diferente a cada rodada!\n\nVocê vencerá ao fazer escolhas que estejam alinhadas com o comportamento típico do seu dinossauro.")
                                 
-                                Text("Como Funciona:")
+                                Text("\nComo Funciona:")
                                     .font(.title3)
                                     .fontWeight(.bold)
+                                
+                                Text("\n• A cada rodada finalizada com sucesso você desbloqueará um novo dinossauro.")
+                                    .frame(width:350)
+                                    .alignmentGuide(.leading, computeValue: {_ in 0})
+                                Text("\n• Durante o jogo serão apresentadas situações em que você deve escolher entre duas opções.")
+                                    .frame(width:350)
+                                    .alignmentGuide(.leading, computeValue: {_ in 0})
+                                Text("\n• Use os botões inferiores esquerdo e direito da tela para tomar sua decisão.")
+                                    .frame(width:350)
+                                    .alignmentGuide(.leading, computeValue: {_ in 0})
+                                Text("\n• Suas escolhas afetam seu nível de energia, que é essencial para a sua sobrevivência.")
+                                    .frame(width:350)
+                                    .alignmentGuide(.leading, computeValue: {_ in 0})
                                                                 
-                                Text("Importante!")
+                                Text("\nImportante!")
                                     .font(.title3)
                                     .fontWeight(.bold)
                                 
@@ -100,3 +98,7 @@ struct TutorialView: View {
 #Preview {
     TutorialView()
 }
+
+
+
+              

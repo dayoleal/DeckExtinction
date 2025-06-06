@@ -1,10 +1,3 @@
-//
-//  Indicator.swift
-//  Tessauro
-//
-//  Created by Aluno Mack on 03/06/25.
-//
-
 import SwiftUI
 
 struct Indicator: View {
