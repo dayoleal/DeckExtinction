@@ -71,7 +71,14 @@ struct ContentView: View {
                     height: 200
                 )
             default:
-                Text("não")
+                if count != 0 {
+                    FinalCardView(
+                        scenario: "Aqui jaz um Plateossauro que cometeu um erro de comportamento. Análise sedimentar prova que sua última decisão foi fatal para muitos dos herbívoros neste ecossistema.",
+                        scene: "loading",
+                        width: 200,
+                        height: 200
+                    )
+                }
             }
             if count == 0 {
                 CardView(
