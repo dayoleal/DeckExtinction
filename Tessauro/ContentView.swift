@@ -67,16 +67,6 @@ struct ContentView: View {
                     decision: $decision4,
                     isDone: $isDone
                 )
-            case "Group":
-                CardView(scenery: "Enquanto você se alimenta, rugidos familiares ecoam no ambiente e uma manada de plateossauros passa por perto. Alguns olhares curiosos surgem. Quer tentar se juntar a eles ou seguir seu caminho em silêncio",
-                         scene: "egg",
-                         option1: "Lama",
-                         option2: "Abrigo",
-                         imgWidth: 400,
-                         imgHeight: 350,
-                         decision: $decision3,
-                         isDone: $isDone)
-                
             case "Shelter":
                 CardView(
                     scenery: "A tempestade rugia lá fora, sem sinais de trégua. Um rugido faminto ecoava em suas entranhas. Entre as rochas, apenas tufos de samambaia ressecada pareciam disponíveis. Mas lá fora, um ninho destruído revela um ovo intacto, perto o suficiente para você alcançá-lo.",
@@ -88,7 +78,28 @@ struct ContentView: View {
                     decision: $decision5,
                     isDone: $isDone
                 )
-            case "Egg":
+            case "Group":
+                CardView(scenery: "Enquanto você se alimenta, rugidos familiares ecoam no ambiente e uma manada de plateossauros passa por perto. Alguns olhares curiosos surgem. Quer tentar se juntar a eles ou seguir seu caminho em silêncio",
+                         scene: "egg",
+                         option1: "Lama",
+                         option2: "Abrigo",
+                         imgWidth: 400,
+                         imgHeight: 350,
+                         decision: $decision3,
+                         isDone: $isDone)
+            
+            case "ShelterAlternative":
+                CardView(
+                    scenery: "A tempestade rugia lá fora, sem sinais de trégua. Um rugido faminto ecoava em suas entranhas. Entre as rochas, apenas tufos de samambaia ressecada pareciam disponíveis. Mas lá fora, um ninho destruído revela um ovo intacto, perto o suficiente para você alcançá-lo.",
+                    scene: "egg",
+                    option1: "Ovo",
+                    option2: "Samambaia",
+                    imgWidth: 400,
+                    imgHeight: 350,
+                    decision: $decision4,
+                    isDone: $isDone
+                )
+            case "EggAlternative":
                 CardView(
                 scenery: "Você alcança os ovos, mas então, um rugido gutural corta o vento. Dentre as árvores encharcadas, o dono dos ovos surge: um Alossauro adulto! Ele corre em sua direção. Você tem segundos para decidir entre devorar os ovos agora, ou fugir.",
                 scene: "egg",
@@ -98,8 +109,8 @@ struct ContentView: View {
                 imgHeight: 350,
                 decision: $decision6,
                 isDone: $isDone
-                    
             )
+            
             case "RunAlternative":
                 CardView(
                 scenery: "Seu coração bate forte, e o alossauro continua a te caçar. Você sabe que o abrigo está perto e, lá dentro, outros Plateossauros podem te ajudar. Mas será que ouvirão seu chamado a tempo? Ou é melhor confiar na sua velocidade e chegar lá antes que o predador te alcance?",
@@ -124,7 +135,7 @@ struct ContentView: View {
                 isDone: $isDone
                     
             )
-            case "Plant":
+            case "PlantAlternative":
                 CardView(
                 scenery: "Você mastiga a planta ressecada, mal saciando sua fome. No canto escuro da caverna, filhotes de Plateossauro resmungam famintos. O pouco que resta em suas patas poderia ser dividido ou escondido antes que os outros notem.",
                 scene: "?",

@@ -14,7 +14,7 @@ class Tree: ObservableObject {
     
     var decisionBool1: Bool = false
     var decisionBool2: Bool = false
-    var decisionBool3: Bool = false
+    var decisionBool3: Bool = true
     var decisionBool4: Bool = false
     var decisionBool5: Bool = false
     var decisionBool6: Bool = false
@@ -197,16 +197,16 @@ class Tree: ObservableObject {
                 let egg = shelter?.createBranch(value: NSNumber(value: true), attribute: "EggAlternative" as NSString)
                 let plant = shelter?.createBranch(value: NSNumber(value: false), attribute: "PlantAlternative" as NSString)
                 
-                let resultado4 = tree.findAction(forAnswers: [
+                let resultadoP4 = tree.findAction(forAnswers: [
                     "Start": NSNumber(value: true),
-                    "Grass": NSNumber(value: true),
+                    "Grass": NSNumber(value: false),
                     "Group": NSNumber(value: false),
                     "ShelterAlternative": NSNumber(value: decisionBool4)
                 ])
                 
-                print(resultado4 ?? "4 não deu certo")
+                print(resultadoP4 ?? "4 não deu certo")
                 if count == 4 {
-                    self.resultado = resultado4?.description ?? "O 4 não foi"
+                    self.resultado = resultadoP4?.description ?? "O 4 não foi"
                     print("esse e o resultado: \(resultado)")
                 }
                 
@@ -216,7 +216,7 @@ class Tree: ObservableObject {
                     
                     let resultado5 = tree.findAction(forAnswers: [
                         "Start": NSNumber(value: true),
-                        "Grass": NSNumber(value: true),
+                        "Grass": NSNumber(value: false),
                         "Group": NSNumber(value: false),
                         "ShelterAlternative": NSNumber(value: true),
                         "EggAlternative": NSNumber(value: decisionBool5)
@@ -238,7 +238,7 @@ class Tree: ObservableObject {
                         
                         let resultado6 = tree.findAction(forAnswers: [
                             "Start": NSNumber(value: true),
-                            "Grass": NSNumber(value: true),
+                            "Grass": NSNumber(value: false),
                             "Group": NSNumber(value: false),
                             "ShelterAlternative": NSNumber(value: true),
                             "EggAlternative": NSNumber(value: false),
@@ -267,7 +267,7 @@ class Tree: ObservableObject {
                     
                     let resultado5 = tree.findAction(forAnswers: [
                         "Start": NSNumber(value: true),
-                        "Grass": NSNumber(value: true),
+                        "Grass": NSNumber(value: false),
                         "Group": NSNumber(value: false),
                         "ShelterAlternative": NSNumber(value: false),
                         "PlantAlternative": NSNumber(value: decisionBool5)
@@ -285,7 +285,7 @@ class Tree: ObservableObject {
                         
                         let resultado6 = tree.findAction(forAnswers: [
                             "Start": NSNumber(value: true),
-                            "Grass": NSNumber(value: true),
+                            "Grass": NSNumber(value: false),
                             "Group": NSNumber(value: false),
                             "ShelterAlternative": NSNumber(value: false),
                             "PlantAlternative": NSNumber(value: true),
@@ -311,7 +311,7 @@ class Tree: ObservableObject {
                         
                         let resultado6 = tree.findAction(forAnswers: [
                             "Start": NSNumber(value: true),
-                            "Grass": NSNumber(value: true),
+                            "Grass": NSNumber(value: false),
                             "Group": NSNumber(value: false),
                             "Shelter": NSNumber(value: false),
                             "PlantAlternative": NSNumber(value: false),
