@@ -101,8 +101,29 @@ class Tree: ObservableObject {
             }
             
             if decisionBool3 {
-                let die = attack?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
-                let die2 = attack?.createBranch(value: NSNumber(value: false), attribute: "Die" as NSString)
+                let kick = attack?.createBranch(value: NSNumber(value: true), attribute: "Kick" as NSString)
+                let bite = attack?.createBranch(value: NSNumber(value: false), attribute: "Bite" as NSString)
+                
+                let resultado4 = tree.findAction(forAnswers: [
+                    "Start": NSNumber(value: true),
+                    "Grass": NSNumber(value: true),
+                    "Alone": NSNumber(value: true),
+                    "Attack": NSNumber(value: decisionBool4)
+                ])
+                
+                print(resultado4 ?? "4 não deu certo")
+                if count == 4 {
+                    self.resultado = resultado4?.description ?? "O 4 não foi"
+                    print("esse e o resultado: \(resultado)")
+                }
+                
+                if decisionBool4 {
+                    let die = kick?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
+                    let die2 = kick?.createBranch(value: NSNumber(value: false), attribute: "Die" as NSString)
+                }else {
+                    let diee = bite?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
+                    let diee2 = bite?.createBranch(value: NSNumber(value: false), attribute: "Die" as NSString)
+                }
             }
             else {
                 let mud = run?.createBranch(value: NSNumber(value: true), attribute: "Mud" as NSString)
@@ -274,10 +295,40 @@ class Tree: ObservableObject {
                             print("esse e o resultado: \(resultado)")
                         }
                         
-                        // TODO: WIN LIDER NO LIDER
+                        if !decisionBool6 { 
+                            let winNoLeader = noLeader?.createBranch(value: NSNumber(value: true), attribute: "Win" as NSString)
+                            let winNoLeader2 = noLeader?.createBranch(value: NSNumber(value: false), attribute: "Win" as NSString)
+                        } else {
+                            let winLeader = leader?.createBranch(value: NSNumber(value: true), attribute: "Win" as NSString)
+                            let winLeader2 = leader?.createBranch(value: NSNumber(value: false), attribute: "Win" as NSString)
+                        }
+                    } else {
+                        let challange = hide?.createBranch(value: NSNumber(value: true), attribute: "Challenge" as NSString)
+                        let runAway = hide?.createBranch(value: NSNumber(value: false), attribute: "RunAway" as NSString)
+                        
+                        let resultado6 = tree.findAction(forAnswers: [
+                            "Start": NSNumber(value: true),
+                            "Grass": NSNumber(value: true),
+                            "Group": NSNumber(value: false),
+                            "Shelter": NSNumber(value: false),
+                            "PlantAlternative": NSNumber(value: false),
+                            "Hide": NSNumber(value: decisionBool6)
+                        ])
+                        
+                        print(resultado6 ?? "6 não deu certo")
+                        if count == 6 {
+                            self.resultado = resultado6?.description ?? "O 6 não foi"
+                            print("esse e o resultado: \(resultado)")
+                        }
                     }
                 }
             }
         }
     }
 }
+
+//extension Int {
+//    var nsNumber: NSNumber {
+//        NSNumber(int: self)
+//    }
+//}
