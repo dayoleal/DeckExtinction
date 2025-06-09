@@ -1,10 +1,3 @@
-//
-//  HomeView.swift
-//  Tessauro
-//
-//  Created by Aluno Mack on 30/05/25.
-//
-
 import SwiftUI
 
 struct HomeView: View {

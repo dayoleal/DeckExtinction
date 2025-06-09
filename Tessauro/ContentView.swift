@@ -6,6 +6,10 @@ struct ContentView: View {
     @State var decision3: Int = 0
     @State var decision4: Int = 0
     @State var decision5: Int = 0
+    @State var decision6: Int = 0
+    @State var decision7: Int = 0
+    @State var decision8: Int = 0
+
     @State var isDone: Bool = false
     @State var count: Int = 0
     
@@ -44,7 +48,7 @@ struct ContentView: View {
             case "Run":
                 CardView(
                     scenery: "Uma tempestade se aproxima quando você avista Plantas medicinais. Deseja arriscar-se na lama para adquirí-la ou seguir para uma caverna próxima, onde outros herbívoros já se aglomeram para abrigo?",
-                    scene: "BrownDinossaur",
+                    scene: "BrownDinossaur", 
                     option1: "Lama",
                     option2: "Abrigo",
                     imgWidth: 300,
@@ -94,12 +98,12 @@ struct ContentView: View {
             }
         }
         .onAppear() {
-            decisionTree = Tree(decision1, decision2, decision3, decision4, decision5)
+            decisionTree = Tree(decision1, decision2, decision3, decision4, decision5, decision6, decision7, decision8)
             decisionTree?.creation(count: count)
         }
         .onChange(of: isDone) { oldValue, newValue in
             count += 1
-            decisionTree = Tree(decision1, decision2, decision3, decision4, decision5)
+            decisionTree = Tree(decision1, decision2, decision3, decision4, decision5, decision6, decision7, decision8)
             if let decision = decisionTree {
                 decision.creation(count: count)
             }
