@@ -20,10 +20,12 @@ class Tree: ObservableObject {
     var decisionBool6: Bool = false
     var decisionBool7: Bool = false
     var decisionBool8: Bool = false
+    
+    @Published public var win: Bool = false
 
     @Published public var resultado: String = "por enquanto nenhum"
     
-    init(_ decision1: Int, _ decision2: Int, _ decision3: Int, _ decision4: Int, _ decision5: Int, _ decision6: Int, _ decision7: Int, _ decision8: Int) {
+    init(_ decision1: Int, _ decision2: Int, _ decision3: Int, _ decision4: Int, _ decision5: Int, _ decision6: Int, _ decision7: Int, _ decision8: Int, _ win: Bool) {
         self.decision1 = decision1
         self.decision2 = decision2
         self.decision3 = decision3
@@ -32,6 +34,7 @@ class Tree: ObservableObject {
         self.decision6 = decision6
         self.decision7 = decision7
         self.decision8 = decision8
+        self.win = win
     }
     
     func setDecision(decision: inout Int, decisionBool: inout Bool) {
@@ -53,10 +56,7 @@ class Tree: ObservableObject {
         setDecision(decision: &decision6, decisionBool: &decisionBool6)
         setDecision(decision: &decision7, decisionBool: &decisionBool7)
         setDecision(decision: &decision8, decisionBool: &decisionBool8)
-        
-        var die: Bool = false
-        var win: Bool = false
-        
+                
         // Grass or Forest
         let grassScenery = tree.rootNode?.createBranch(value: NSNumber(value: true), attribute: "Grass" as NSString)
         let forestScenery = tree.rootNode?.createBranch(value: NSNumber(value: false), attribute: "Grass" as NSString)
@@ -167,7 +167,6 @@ class Tree: ObservableObject {
                         let die6 = egg?.createBranch(value: NSNumber(value: false), attribute: "Die" as NSString)
                     }
                     else {
-                        // TODO: Resolver isso aqui
                         win = true
                     }
                 }
@@ -281,7 +280,7 @@ class Tree: ObservableObject {
                     
                     if decisionBool5 {
                         let leader = share?.createBranch(value: NSNumber(value: true), attribute: "Leader" as NSString)
-                        let noLeader = share?.createBranch(value: NSNumber(value: true), attribute: "NoLeader" as NSString)
+                        let noLeader = share?.createBranch(value: NSNumber(value: false), attribute: "NoLeader" as NSString)
                         
                         let resultado6 = tree.findAction(forAnswers: [
                             "Start": NSNumber(value: true),
@@ -298,12 +297,13 @@ class Tree: ObservableObject {
                             print("esse e o resultado: \(resultado)")
                         }
                         
-                        if !decisionBool6 { 
-                            let winNoLeader = noLeader?.createBranch(value: NSNumber(value: true), attribute: "Win" as NSString)
-                            let winNoLeader2 = noLeader?.createBranch(value: NSNumber(value: false), attribute: "Win" as NSString)
-                        } else {
+                        if decisionBool6 {
                             let winLeader = leader?.createBranch(value: NSNumber(value: true), attribute: "Win" as NSString)
                             let winLeader2 = leader?.createBranch(value: NSNumber(value: false), attribute: "Win" as NSString)
+                           
+                        } else {
+                            let winNoLeader = noLeader?.createBranch(value: NSNumber(value: true), attribute: "Win" as NSString)
+                            let winNoLeader2 = noLeader?.createBranch(value: NSNumber(value: false), attribute: "Win" as NSString)
                         }
                     } else {
                         let challange = hide?.createBranch(value: NSNumber(value: true), attribute: "Challenge" as NSString)
@@ -313,7 +313,7 @@ class Tree: ObservableObject {
                             "Start": NSNumber(value: true),
                             "Grass": NSNumber(value: false),
                             "Group": NSNumber(value: false),
-                            "Shelter": NSNumber(value: false),
+                            "ShelterAlternative": NSNumber(value: false),
                             "PlantAlternative": NSNumber(value: false),
                             "Hide": NSNumber(value: decisionBool6)
                         ])
@@ -329,9 +329,3 @@ class Tree: ObservableObject {
         }
     }
 }
-
-//extension Int {
-//    var nsNumber: NSNumber {
-//        NSNumber(int: self)
-//    }
-//}

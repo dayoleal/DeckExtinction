@@ -13,8 +13,7 @@ struct ContentView: View {
     @State var isDone: Bool = false
     @State var count: Int = 0
     
-    var die: Bool
-    var win: Bool
+    @State var winView: Bool
     
     @State var decisionTree: Tree? = nil
     @State var action: Bool = false
@@ -37,7 +36,7 @@ struct ContentView: View {
             case "Alone":
                 CardView(
                     scenery: "O céu escurecia quando surge um Herrerasauro! À sua direita, rochas escarpadas oferecem escape se conseguir escalar a tempo. Ou você pode tentar atacá-lo!",
-                    scene: "BrownDinosaur",
+                    scene: "carnivoreScene",
                     option1: "Atacar",
                     option2: "Correr",
                     imgWidth: 250,
@@ -48,7 +47,7 @@ struct ContentView: View {
             case "Attack":
                 CardView(
                     scenery: "O Herrerasauro se aproxima a cada segundo.Seus músculos tencionam, vai derruba-lo com um golpe de calda potente ou tentar se aproximar o suficiente para afastá-lo como a mordida afiada?",
-                    scene: "BrownDinosaur",
+                    scene: "attackScene",
                     option1: "Calda",
                     option2: "Mordida",
                     imgWidth: 250,
@@ -59,11 +58,11 @@ struct ContentView: View {
             case "Run":
                 CardView(
                     scenery: "Uma tempestade se aproxima quando você avista Plantas medicinais. Deseja arriscar-se na lama para adquirí-la ou seguir para uma caverna próxima, onde outros herbívoros já se aglomeram para abrigo?",
-                    scene: "BrownDinossaur", 
+                    scene: "rainScene",
                     option1: "Lama",
                     option2: "Abrigo",
-                    imgWidth: 300,
-                    imgHeight: 350,
+                    imgWidth: 250,
+                    imgHeight: 250,
                     decision: $decision4,
                     isDone: $isDone
                 )
@@ -79,12 +78,12 @@ struct ContentView: View {
                     isDone: $isDone
                 )
             case "Group":
-                CardView(scenery: "Enquanto você se alimenta, rugidos familiares ecoam no ambiente e uma manada de plateossauros passa por perto. Alguns olhares curiosos surgem. Quer tentar se juntar a eles ou seguir seu caminho em silêncio",
-                         scene: "egg",
+                CardView(scenery: "Uma tempestade se aproxima quando você avista Plantas medicinais. Deseja arriscar-se na lama para adquirí-la ou seguir para uma caverna próxima, onde outros herbívoros já se aglomeram para abrigo?",
+                         scene: "rainScene",
                          option1: "Lama",
                          option2: "Abrigo",
-                         imgWidth: 400,
-                         imgHeight: 350,
+                         imgWidth: 280,
+                         imgHeight: 280,
                          decision: $decision3,
                          isDone: $isDone)
             
@@ -101,90 +100,89 @@ struct ContentView: View {
                 )
             case "EggAlternative":
                 CardView(
-                scenery: "Você alcança os ovos, mas então, um rugido gutural corta o vento. Dentre as árvores encharcadas, o dono dos ovos surge: um Alossauro adulto! Ele corre em sua direção. Você tem segundos para decidir entre devorar os ovos agora, ou fugir.",
+                scenery: "Você alcança os ovos, mas então, um rugido gutural corta o vento. Dentre as árvores encharcadas, o dono dos ovos surge: um Herrerasauro adulto! Ele corre em sua direção. Você tem segundos para decidir entre devorar os ovos agora, ou fugir.",
                 scene: "egg",
                 option1: "Comer",
                 option2: "Fugir",
                 imgWidth: 400,
                 imgHeight: 350,
-                decision: $decision6,
+                decision: $decision5,
                 isDone: $isDone
             )
             
             case "RunAlternative":
                 CardView(
-                scenery: "Seu coração bate forte, e o alossauro continua a te caçar. Você sabe que o abrigo está perto e, lá dentro, outros Plateossauros podem te ajudar. Mas será que ouvirão seu chamado a tempo? Ou é melhor confiar na sua velocidade e chegar lá antes que o predador te alcance?",
-                scene: "?",
+                scenery: "Seu coração bate forte, e o herrerasauro continua a te caçar. Você sabe que o abrigo está perto e, lá dentro, outros Plateossauros podem te ajudar. Mas será que ouvirão seu chamado a tempo? Ou é melhor confiar na sua velocidade e chegar lá antes que o predador te alcance?",
+                scene: "carnivoreScene",
                 option1: "Ajuda",
                 option2: "Sozinho",
                 imgWidth: 400,
                 imgHeight: 350,
-                decision: $decision7,
+                decision: $decision6,
                 isDone: $isDone
                     
             )
             case "CallHelp":
                 CardView(
                 scenery: "Em segundos, o chão começa a tremer. O bando está vindo! Eles se posicionam ao seu redor, prontos para agir. Agora, a decisão é sua: ordenar um ataque em grupo para expulsar o predador ou tentar uma manobra de distração e fugir sem risco de ferimentos?",
-                scene: "?",
+                scene: "group",
                 option1: "Atacar",
                 option2: "Confundir",
-                imgWidth: 400,
-                imgHeight: 350,
-                decision: $decision8,
+                imgWidth: 250,
+                imgHeight: 280,
+                decision: $decision7,
                 isDone: $isDone
                     
             )
             case "PlantAlternative":
                 CardView(
                 scenery: "Você mastiga a planta ressecada, mal saciando sua fome. No canto escuro da caverna, filhotes de Plateossauro resmungam famintos. O pouco que resta em suas patas poderia ser dividido ou escondido antes que os outros notem.",
-                scene: "?",
+                scene: "BrownDinosaur",
                 option1: "Dividir",
                 option2: "Esconder",
-                imgWidth: 400,
-                imgHeight: 350,
-                decision: $decision7,
+                imgWidth: 250,
+                imgHeight: 280,
+                decision: $decision5,
                 isDone: $isDone
                     
             )
             case "Share":
                 CardView(
-                scenery: "sua decisão de dividir a comida ecoa pelo abrigo. Os filhotes se aconchegam perto de você e até um macho ferido inclina a cabeça em respeito. O grupo murmura em uníssono, um chamado ancestral. Eles estão lhe oferecendo algo raro: a liderança do grupo.",
-                scene: "?",
+                scenery: "Sua decisão de dividir a comida ecoa pelo abrigo. Os filhotes se aconchegam perto de você e até um macho ferido inclina a cabeça em respeito. O grupo murmura em uníssono, um chamado ancestral. Eles estão lhe oferecendo algo raro: a liderança do grupo.",
+                scene: "BrownDinosaur",
                 option1: "Aceitar",
                 option2: "Recusar",
-                imgWidth: 400,
-                imgHeight: 350,
-                decision: $decision7,
+                imgWidth: 250,
+                imgHeight: 280,
+                decision: $decision6,
                 isDone: $isDone
                     
             )
             case "Hide":
                 CardView(
                 scenery: "Você engole os últimos pedaços de as escondidas, mas um som grave furioso interrompe sua refeição. O líder do bando sabe o que você fez. Você pode tentar enfrentá-lo em um duelo ou fugir para as planícies solitárias, onde a tempestade e predadores não terão piedade.",
-                scene: "?",
+                scene: "BrownDinosaur",
                 option1: "Desafiar",
                 option2: "Fugir",
-                imgWidth: 400,
-                imgHeight: 350,
-                decision: $decision7,
+                imgWidth: 250,
+                imgHeight: 280,
+                decision: $decision6,
                 isDone: $isDone
                     
             )
-            
-            case "Win":
-                FinalCardView(
-                    scenario: "Parabéns, Sobrevivente do Triássico! Suas escolhas sábias sob tempestades, ataques de predadores e escassez de alimento provaram que você domina a arte da sobrevivência pré-histórica. Cada decisão estratégica moldou um herbívoro verdadeiramente resiliente.\n\nSua jornada continua... mas agora, com um dinossauro da era jurassica/ cretácia!",
-                    scene: "loadingDino",
-                    width: 200,
-                    height: 200
-                )
-            
             default:
-                if count != 0 {
+                if count != 0 && winView {
                     FinalCardView(
-                        scenario: "Aqui jaz um Plateossauro que cometeu um erro de comportamento. Análise sedimentar prova que sua última decisão foi fatal para muitos dos herbívoros neste ecossistema.",
-                        scene: "loading",
+                        scenario: "Parabéns, Sobrevivente do Triássico! Suas escolhas sábias sob tempestades, ataques de predadores e escassez de alimento provaram que você domina a arte da sobrevivência pré-histórica. Cada decisão estratégica moldou um herbívoro verdadeiramente resiliente.\n\nSua jornada continua... mas agora, com um dinossauro da era jurassica/ cretácia!",
+                        scene: "loadingDino",
+                        width: 200,
+                        height: 200
+                    )
+                }
+                else if count != 0 {
+                    FinalCardView(
+                        scenario: "Aqui jaz um Plateossauro que cometeu um erro de comportamento. Análise sedimentar prova que sua última decisão foi fatal para muitos dos herbívoros neste ecossistema.",
+                        scene: "loadingDino",
                         width: 200,
                         height: 200
                     )
@@ -204,14 +202,14 @@ struct ContentView: View {
             }
         }
         .onAppear() {
-            decisionTree = Tree(decision1, decision2, decision3, decision4, decision5,decision6,decision7,decision8)
+            decisionTree = Tree(decision1, decision2, decision3, decision4, decision5,decision6,decision7,decision8, winView)
 
             decisionTree?.creation(count: count)
         }
         .onChange(of: isDone) { oldValue, newValue in
             count += 1
 
-            decisionTree = Tree(decision1, decision2, decision3, decision4, decision5,decision6,decision7,decision8)
+            decisionTree = Tree(decision1, decision2, decision3, decision4, decision5,decision6,decision7,decision8, winView)
 
             if let decision = decisionTree {
                 decision.creation(count: count)
@@ -220,9 +218,12 @@ struct ContentView: View {
         .onChange(of: decisionTree?.resultado ?? "a") { oldValue, newValue in
             result = newValue
         }
+        .onChange(of: decisionTree?.win ?? false) { oldValue, newValue in
+            winView = newValue
+        }
     }
 }
 
 #Preview {
-    ContentView(die: false, win: false)
+    ContentView(winView: false)
 }
