@@ -57,23 +57,45 @@ struct FinalCardView: View {
                             }
                         }
                     }
-                    NavigationLink {
-                        ContentView(die: false, win: false)
-                    } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                                .frame(width: 220, height: 50)
-                            HStack {
-                                Image(systemName: "gamecontroller")
-                                    .foregroundStyle(.black)
-                                    .bold()
-                                Text("Jogar Novamente")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.black)
+                    
+                    HStack {
+                        NavigationLink {
+                            ContentView(winView: false)
+                        } label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                                    .frame(width: 120, height: 50)
+                                HStack {
+                                    Image(systemName: "gamecontroller")
+                                        .foregroundStyle(.black)
+                                        .bold()
+                                    Text("Jogar")
+                                        .font(.headline)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.black)
+                                }
                             }
-                        }
-                    }.padding()
+                        }.padding()
+                        
+                        
+                        NavigationLink {
+                            HomeView()
+                        } label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                                    .frame(width: 120, height: 50)
+                                HStack {
+                                    Image(systemName: "house.fill")
+                                        .foregroundStyle(.black)
+                                        .bold()
+                                    Text("Início")
+                                        .font(.headline)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.black)
+                                }
+                            }
+                        }.padding()
+                    }
                 }
             }
             

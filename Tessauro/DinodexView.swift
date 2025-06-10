@@ -64,7 +64,7 @@ struct DinodexView: View {
                                 }.padding()
                                 
                                 NavigationLink {
-                                    ContentView(die: false, win: false)
+                                    ContentView(winView: false)
                                 } label: {
                                     ZStack {
                                         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)

@@ -33,8 +33,8 @@ struct HomeView: View {
                         }
                         .padding(30)
                         
-                        Text("T-SAURO")
-                            .font(.title)
+                        Text("DeckExtinction")
+                            .font(Font.custom("fonte.ttf", size: 32))
                         
                         Spacer()
                         ZStack {
@@ -57,7 +57,7 @@ struct HomeView: View {
                                 }
                                 
                                 NavigationLink {
-                                    ContentView(die: false, win: false)
+                                    ContentView(winView: false)
                                 } label: {
                                     ZStack {
                                         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
@@ -92,7 +92,7 @@ struct HomeView: View {
                         .padding(.top, 15)
                 }.padding(.bottom, 120)
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 
