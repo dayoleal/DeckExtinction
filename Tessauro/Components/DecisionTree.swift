@@ -14,7 +14,7 @@ class Tree: ObservableObject {
     
     var decisionBool1: Bool = false
     var decisionBool2: Bool = false
-    var decisionBool3: Bool = true
+    var decisionBool3: Bool = false
     var decisionBool4: Bool = false
     var decisionBool5: Bool = false
     var decisionBool6: Bool = false
@@ -251,8 +251,7 @@ class Tree: ObservableObject {
                         }
                         
                         if decisionBool6 {
-                            let attack = callHelp?.createBranch(value: NSNumber(value: true), attribute: "Win" as NSString)
-                            let confuse = callHelp?.createBranch(value: NSNumber(value: false), attribute: "Win" as NSString)
+                            win = true
                         }
                         else {
                             let die4 = noHelp?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
@@ -297,14 +296,7 @@ class Tree: ObservableObject {
                             print("esse e o resultado: \(resultado)")
                         }
                         
-                        if decisionBool6 {
-                            let winLeader = leader?.createBranch(value: NSNumber(value: true), attribute: "Win" as NSString)
-                            let winLeader2 = leader?.createBranch(value: NSNumber(value: false), attribute: "Win" as NSString)
-                           
-                        } else {
-                            let winNoLeader = noLeader?.createBranch(value: NSNumber(value: true), attribute: "Win" as NSString)
-                            let winNoLeader2 = noLeader?.createBranch(value: NSNumber(value: false), attribute: "Win" as NSString)
-                        }
+                        win = true
                     } else {
                         let challange = hide?.createBranch(value: NSNumber(value: true), attribute: "Challenge" as NSString)
                         let runAway = hide?.createBranch(value: NSNumber(value: false), attribute: "RunAway" as NSString)

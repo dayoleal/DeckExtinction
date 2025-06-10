@@ -22,84 +22,90 @@ struct CardView: View {
     }
     
     var body: some View {
-        ZStack {
-            Color.brownBackground
-                .ignoresSafeArea()
-            
-            VStack {
-                HStack {
-                    HStack {
-                        Image(systemName: "flame.fill")
-                            .font(.title)
-                            .foregroundColor(.orangeBright)
-                        RoundedRectangle(cornerRadius: 25.0)
-                            .frame(width: 180, height: 14)
-                            .foregroundColor(.lightBackground)
-                    }
-                    Spacer()
-                    ZStack {
-                        Circle()
-                            .frame(width: 40, height: 40)
-                            .foregroundColor(.accentColor)
-                        Image(systemName: "person.fill")
-                            .font(.title3)
-                            .foregroundColor(.black)
-                    }
-                }.padding(20)
+        NavigationStack {
+            ZStack {
+                Color.brownBackground
+                    .ignoresSafeArea()
                 
-                ZStack {
-                    Rectangle()
-                        .frame(width: 380, height: 600)
-                        .foregroundColor(.brownSecondary)
-                    VStack {
-                        Text(scenery)
-                            .frame(width: 320)
-                            .foregroundColor(.lightBackground)
-                            .fontWeight(.bold)
-                            .padding(.bottom)
-                            .multilineTextAlignment(.center)
-                        ZStack {
+                VStack {
+                    HStack {
+                        HStack {
+                            Image(systemName: "flame.fill")
+                                .font(.title)
+                                .foregroundColor(.orangeBright)
                             RoundedRectangle(cornerRadius: 25.0)
+                                .frame(width: 180, height: 14)
                                 .foregroundColor(.lightBackground)
-                                .frame(width: 330, height: 350)
-                            Image(scene)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: imgWidth, height: imgHeight)
+                        }
+                        Spacer()
+                        NavigationLink {
+                            DinodexView()
+                        } label: {
+                            ZStack {
+                                Circle()
+                                    .frame(width: 40, height: 45)
+                                    .foregroundColor(.accentColor)
+                                Image("dino.egg")
+                                    .font(.title)
+                                    .foregroundColor(.black)
+                            }
+                        }
+                    }.padding(20)
+                    
+                    ZStack {
+                        Rectangle()
+                            .frame(width: 380, height: 600)
+                            .foregroundColor(.brownSecondary)
+                        VStack {
+                            Text(scenery)
+                                .frame(width: 320)
+                                .foregroundColor(.lightBackground)
+                                .fontWeight(.bold)
+                                .padding(.bottom)
+                                .multilineTextAlignment(.center)
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 25.0)
+                                    .foregroundColor(.lightBackground)
+                                    .frame(width: 330, height: 350)
+                                Image(scene)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: imgWidth, height: imgHeight)
+                            }
                         }
                     }
-                }
-                HStack {
-                    Button(action: {
-                        decision = 1
-                        isDone.toggle()
-                    }, label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 25.0)
-                                .frame(width: 150, height: 50)
-
+                    HStack {
+                        Button(action: {
+                            decision = 1
+                            isDone.toggle()
+                        }, label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 25.0)
+                                    .frame(width: 150, height: 50)
+                                
                                 Text(option1)
                                     .font(.headline)
                                     .fontWeight(.bold)
                                     .foregroundColor(.black)
-                        }
-                    })
-                    
-                    Spacer()
-                    Button(action: {
-                        decision = -1
-                        isDone.toggle()
-                    }, label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 25.0)
-                                .frame(width: 150, height: 50)
+                            }
+                        })
+                        
+                        Spacer()
+                        Button(action: {
+                            decision = -1
+                            isDone.toggle()
+                        }, label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 25.0)
+                                    .frame(width: 150, height: 50)
                                 Text(option2)
                                     .font(.headline)
                                     .fontWeight(.bold)
                                     .foregroundColor(.black)
-                        }
-                    })
-                }.padding(20)
+                            }
+                        })
+                    }.padding(20)
+                }
             }
         }
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0635E08B2DF8AE55004EC214 /* fonte.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0635E08A2DF8AE55004EC214 /* fonte.ttf */; };
 		5515DC742DEF8E8C00E3FD13 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515DC732DEF8E8C00E3FD13 /* TutorialView.swift */; };
 		559A39202DE8E8EE00D78387 /* TessauroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A391F2DE8E8EE00D78387 /* TessauroApp.swift */; };
 		559A39222DE8E8EE00D78387 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A39212DE8E8EE00D78387 /* ContentView.swift */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0635E08A2DF8AE55004EC214 /* fonte.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fonte.ttf; sourceTree = "<group>"; };
+		0635E08C2DF8AE6C004EC214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5515DC732DEF8E8C00E3FD13 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		559A391C2DE8E8EE00D78387 /* Tessauro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tessauro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		559A391F2DE8E8EE00D78387 /* TessauroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TessauroApp.swift; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 		559A391E2DE8E8EE00D78387 /* Tessauro */ = {
 			isa = PBXGroup;
 			children = (
+				0635E08C2DF8AE6C004EC214 /* Info.plist */,
 				55E4E6E62DEF57E60039C008 /* Components */,
 				559A391F2DE8E8EE00D78387 /* TessauroApp.swift */,
 				559A392F2DE8EF9400D78387 /* LoadingView.swift */,
@@ -74,6 +78,7 @@
 				559A39312DEA42DA00D78387 /* HomeView.swift */,
 				55A1A7AB2DEE3EA000814BED /* DinodexView.swift */,
 				5515DC732DEF8E8C00E3FD13 /* TutorialView.swift */,
+				0635E08A2DF8AE55004EC214 /* fonte.ttf */,
 				559A39232DE8E8F100D78387 /* Assets.xcassets */,
 				559A39252DE8E8F100D78387 /* Preview Content */,
 			);
@@ -157,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0635E08B2DF8AE55004EC214 /* fonte.ttf in Resources */,
 				559A39272DE8E8F100D78387 /* Preview Assets.xcassets in Resources */,
 				559A39242DE8E8F100D78387 /* Assets.xcassets in Resources */,
 			);
@@ -314,6 +320,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Tessauro/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tessauro/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -342,6 +349,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Tessauro/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tessauro/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
