@@ -79,7 +79,7 @@ struct ContentView: View {
                     isDone: $isDone
                 )
             case "Group":
-                CardView(scenery: "Enquanto você se alimenta, rugidos familiares ecoam no ambiente e uma manada de plateossauros passa por perto. Alguns olhares curiosos surgem. Quer tentar se juntar a eles ou seguir seu caminho em silêncio",
+                CardView(scenery: "Uma tempestade se aproxima quando você avista Plantas medicinais. Deseja arriscar-se na lama para adquirí-la ou seguir para uma caverna próxima, onde outros herbívoros já se aglomeram para abrigo?",
                          scene: "egg",
                          option1: "Lama",
                          option2: "Abrigo",
@@ -101,7 +101,7 @@ struct ContentView: View {
                 )
             case "EggAlternative":
                 CardView(
-                scenery: "Você alcança os ovos, mas então, um rugido gutural corta o vento. Dentre as árvores encharcadas, o dono dos ovos surge: um Alossauro adulto! Ele corre em sua direção. Você tem segundos para decidir entre devorar os ovos agora, ou fugir.",
+                scenery: "Você alcança os ovos, mas então, um rugido gutural corta o vento. Dentre as árvores encharcadas, o dono dos ovos surge: um Herrerasauro adulto! Ele corre em sua direção. Você tem segundos para decidir entre devorar os ovos agora, ou fugir.",
                 scene: "egg",
                 option1: "Comer",
                 option2: "Fugir",
@@ -113,7 +113,7 @@ struct ContentView: View {
             
             case "RunAlternative":
                 CardView(
-                scenery: "Seu coração bate forte, e o alossauro continua a te caçar. Você sabe que o abrigo está perto e, lá dentro, outros Plateossauros podem te ajudar. Mas será que ouvirão seu chamado a tempo? Ou é melhor confiar na sua velocidade e chegar lá antes que o predador te alcance?",
+                scenery: "Seu coração bate forte, e o herrerasauro continua a te caçar. Você sabe que o abrigo está perto e, lá dentro, outros Plateossauros podem te ajudar. Mas será que ouvirão seu chamado a tempo? Ou é melhor confiar na sua velocidade e chegar lá antes que o predador te alcance?",
                 scene: "?",
                 option1: "Ajuda",
                 option2: "Sozinho",
@@ -143,7 +143,7 @@ struct ContentView: View {
                 option2: "Esconder",
                 imgWidth: 400,
                 imgHeight: 350,
-                decision: $decision7,
+                decision: $decision5,
                 isDone: $isDone
                     
             )
@@ -155,7 +155,7 @@ struct ContentView: View {
                 option2: "Recusar",
                 imgWidth: 400,
                 imgHeight: 350,
-                decision: $decision7,
+                decision: $decision6,
                 isDone: $isDone
                     
             )
@@ -167,7 +167,7 @@ struct ContentView: View {
                 option2: "Fugir",
                 imgWidth: 400,
                 imgHeight: 350,
-                decision: $decision7,
+                decision: $decision6,
                 isDone: $isDone
                     
             )

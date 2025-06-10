@@ -14,7 +14,7 @@ class Tree: ObservableObject {
     
     var decisionBool1: Bool = false
     var decisionBool2: Bool = false
-    var decisionBool3: Bool = true
+    var decisionBool3: Bool = false
     var decisionBool4: Bool = false
     var decisionBool5: Bool = false
     var decisionBool6: Bool = false
@@ -281,7 +281,7 @@ class Tree: ObservableObject {
                     
                     if decisionBool5 {
                         let leader = share?.createBranch(value: NSNumber(value: true), attribute: "Leader" as NSString)
-                        let noLeader = share?.createBranch(value: NSNumber(value: true), attribute: "NoLeader" as NSString)
+                        let noLeader = share?.createBranch(value: NSNumber(value: false), attribute: "NoLeader" as NSString)
                         
                         let resultado6 = tree.findAction(forAnswers: [
                             "Start": NSNumber(value: true),
