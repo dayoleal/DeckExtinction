@@ -71,7 +71,7 @@ struct ContentView: View {
                 case "Shelter":
                     CardView(
                         scenery: "A tempestade rugia lá fora, sem sinais de trégua. Um rugido faminto ecoava em suas entranhas. Entre as rochas, apenas tufos de samambaia ressecada pareciam disponíveis. Mas lá fora, um ninho destruído revela um ovo intacto, perto o suficiente para você alcançá-lo.",
-                        scene: "egg",
+                        scene: "egg ",
                         option1: "Ovo",
                         option2: "Samambaia",
                         imgWidth: 400,
