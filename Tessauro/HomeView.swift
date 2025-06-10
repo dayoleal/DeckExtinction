@@ -11,7 +11,7 @@ struct HomeView: View {
                     VStack {
                         HStack {
                             NavigationLink {
-                                LoadingView()
+                                TutorialView()
                             } label: {
                                 Label("", systemImage: "info.circle")
                                     .font(.title)
@@ -25,7 +25,7 @@ struct HomeView: View {
                                 ZStack {
                                     Circle()
                                         .frame(width: 45, height: 45)
-                                    Image(systemName: "info.circle")
+                                    Image("dino.egg")
                                         .font(.title)
                                         .foregroundStyle(.black)
                                 }
@@ -56,23 +56,23 @@ struct HomeView: View {
                                         .multilineTextAlignment(.center)
                                 }
                                 
-                                Button(action: {
-                                    DinodexView()
-                                },
-                                       label: {
+                                NavigationLink {
+                                    ContentView(die: false, win: false)
+                                } label: {
                                     ZStack {
                                         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                                             .frame(width: 150, height: 50)
                                         HStack {
                                             Image(systemName: "gamecontroller")
                                                 .foregroundStyle(.black)
+                                                .bold()
                                             Text("Jogar")
                                                 .font(.headline)
                                                 .fontWeight(.bold)
                                                 .foregroundColor(.black)
                                         }
                                     }
-                                }).padding()
+                                }.padding()
                             }
                         }
                     }
