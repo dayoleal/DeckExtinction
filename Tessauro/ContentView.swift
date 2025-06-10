@@ -51,8 +51,8 @@ struct ContentView: View {
                         scene: "attackScene",
                         option1: "Calda",
                         option2: "Mordida",
-                        imgWidth: 250,
-                        imgHeight: 280,
+                        imgWidth: 230,
+                        imgHeight: 250,
                         decision: $decision4,
                         isDone: $isDone
                     )
