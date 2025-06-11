@@ -66,33 +66,31 @@ struct CardView: View {
                             VStack {
                                 if geometry.size.height < 800 {
                                     Text(scenery)
-                                        .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.25)
+                                        .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.25)
                                         .foregroundColor(.lightBackground)
                                         .fontWeight(.bold)
-                                        .padding(.bottom)
                                         .multilineTextAlignment(.center)
                                 } else {
                                     Text(scenery)
                                         .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.2)
                                         .foregroundColor(.lightBackground)
                                         .fontWeight(.bold)
-                                        .padding(.bottom)
                                         .multilineTextAlignment(.center)
                                 }
                                 ZStack {
                                     if geometry.size.height < 800 {
                                         RoundedRectangle(cornerRadius: 25.0)
                                             .foregroundColor(.lightBackground)
-                                            .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.4)
+                                            .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.37)
                                     } else {
                                         RoundedRectangle(cornerRadius: 25.0)
                                             .foregroundColor(.lightBackground)
-                                            .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.5)
+                                            .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.37)
                                     }
                                     Image(scene)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(width: geometry.size.width * 0.35, height: geometry.size.height * 0.35)
+                                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.3)
                                 }
                             }
                         }

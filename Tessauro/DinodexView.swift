@@ -11,7 +11,6 @@ struct DinodexView: View {
                         
                         VStack {
                             Text("PLATEOSSAURO")
-                                .padding(.top)
                                 .font(Font.custom("ZCOOLKuaiLe-Regular", size: 30))
                             
                             Spacer()
@@ -55,9 +54,10 @@ struct DinodexView: View {
                                                     .frame(width: geometry.size.width * 0.84, height: geometry.size.height * 0.2)
                                             } else {
                                                 Text("Você  sabia que o Plateossauro vivia em bandos? Uma evidência disso foram fósseis encontrados com dezenas de esqueletos, indicando mortes em massa causadas por enchentes ou lamaçais.\n\nEssa era a principal estratégia de defesa contra predadores carnívoros, que eram maiores e mais ágeis.")
-                                                    .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.26)
+                                                    .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.35)
                                             }
                                         }
+                                        .padding(.top, geometry.size.height * 0.03)
                                         .foregroundStyle(.yellowLetter)
                                         
                                         if geometry.size.height < 700 {
@@ -113,7 +113,7 @@ struct DinodexView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: geometry.size.width * 0.85, height: geometry.size.height * 0.25)
                         
-                    }.padding(.bottom, geometry.size.height * 0.5)
+                    }.padding(.bottom, geometry.size.height * 0.535)
                 }
             }
         }

@@ -45,7 +45,7 @@ struct FinalCardView: View {
                                 
                             VStack {
                                 Text(scenario)
-                                    .frame(width: geometry.size.width * 0.8)
+                                    .frame(width: geometry.size.width * 0.9)
                                     .foregroundColor(.lightBackground)
                                     .fontWeight(.bold)
                                     .padding(.bottom)
@@ -57,7 +57,7 @@ struct FinalCardView: View {
                                     Image(scene)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(width: geometry.size.width * 0.35, height: geometry.size.height * 0.35)
+                                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.3)
                                 }
                             }
                         }
