@@ -34,7 +34,7 @@ struct HomeView: View {
                             .padding(30)
                             
                             Text("DeckExtinction")
-                                .font(Font.custom("ZCOOLKuaiLe-Regular.ttf", size: 32))
+                                .font(Font.custom("ZCOOLKuaiLe-Regular", size: 34))
                             
                             Spacer()
                             ZStack {

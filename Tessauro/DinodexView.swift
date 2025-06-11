@@ -11,8 +11,8 @@ struct DinodexView: View {
                         
                         VStack {
                             Text("PLATEOSSAURO")
-                                .font(.title)
                                 .padding(.top)
+                                .font(Font.custom("ZCOOLKuaiLe-Regular", size: 30))
                             
                             Spacer()
                             ZStack {
