@@ -69,8 +69,8 @@ struct ContentView: View {
                     )
                 case "Shelter":
                     CardView(
-                        scenery: "A tempestade rugia lá fora, sem sinais de trégua. Um rugido faminto ecoava em suas entranhas. Entre as rochas, apenas tufos de samambaia ressecada pareciam disponíveis. Mas lá fora, um ninho destruído revela um ovo intacto, perto o suficiente para você alcançá-lo.",
-                        scene: "egg",
+                        scenery: "Um rugido faminto ecoava em suas entranhas. Entre as rochas, apenas tufos de samambaia ressecada pareciam disponíveis. Mas lá fora, um ninho destruído revela um ovo intacto, perto o suficiente para você alcançá-lo.",
+                        scene: "egg ",
                         option1: "Ovo",
                         option2: "Samambaia",
                         imgWidth: 400,
@@ -90,7 +90,7 @@ struct ContentView: View {
                     
                 case "ShelterAlternative":
                     CardView(
-                        scenery: "A tempestade rugia lá fora, sem sinais de trégua. Um rugido faminto ecoava em suas entranhas. Entre as rochas, apenas tufos de samambaia ressecada pareciam disponíveis. Mas lá fora, um ninho destruído revela um ovo intacto, perto o suficiente para você alcançá-lo.",
+                        scenery: "Um rugido ecoava em suas entranhas. Entre as rochas, apenas tufos de samambaia pareciam disponíveis. Mas lá fora, um ninho destruído revela um ovo intacto, perto o suficiente para você alcançá-lo.",
                         scene: "egg",
                         option1: "Ovo",
                         option2: "Samambaia",
@@ -101,7 +101,7 @@ struct ContentView: View {
                     )
                 case "EggAlternative":
                     CardView(
-                        scenery: "Você alcança os ovos, mas então, um rugido gutural corta o vento. Dentre as árvores encharcadas, o dono dos ovos surge: um Herrerasauro adulto! Ele corre em sua direção. Você tem segundos para decidir entre devorar os ovos agora, ou fugir.",
+                        scenery: "Você alcança os ovos, mas então, um rugido gutural corta o vento. Dentre as árvores, o dono dos ovos surge: um Herrerasauro adulto! Ele corre em sua direção. Você tem que decidir entre devorar os ovos, ou fugir.",
                         scene: "egg",
                         option1: "Comer",
                         option2: "Fugir",
@@ -113,7 +113,7 @@ struct ContentView: View {
                     
                 case "RunAlternative":
                     CardView(
-                        scenery: "Seu coração bate forte, e o herrerasauro continua a te caçar. Você sabe que o abrigo está perto e, lá dentro, outros Plateossauros podem te ajudar. Mas será que ouvirão seu chamado a tempo? Ou é melhor confiar na sua velocidade e chegar lá antes que o predador te alcance?",
+                        scenery: "O herrerasauro continua a te caçar. Você sabe que o abrigo está perto,onde outros Plateossauros podem te ajudar. Mas será que ouvirão seu chamado? Ou é melhor confiar na sua velocidade e chegar lá antes que ele te alcance?",
                         scene: "carnivoreScene",
                         option1: "Ajuda",
                         option2: "Sozinho",
@@ -125,7 +125,7 @@ struct ContentView: View {
                     )
                 case "CallHelp":
                     CardView(
-                        scenery: "Em segundos, o chão começa a tremer. O bando está vindo! Eles se posicionam ao seu redor, prontos para agir. Agora, a decisão é sua: ordenar um ataque em grupo para expulsar o predador ou tentar uma manobra de distração e fugir sem risco de ferimentos?",
+                        scenery: "Em segundos, o chão começa a tremer. O bando está vindo! Eles se posicionam ao seu redor, prontos para agir. Agora, a decisão é sua: ordenar um ataque em grupo para expulsar o predador ou tentar uma manobra de distração e fugir?",
                         scene: "group",
                         option1: "Atacar",
                         option2: "Confundir",
@@ -149,7 +149,7 @@ struct ContentView: View {
                     )
                 case "Share":
                     CardView(
-                        scenery: "Sua decisão de dividir a comida ecoa pelo abrigo. Os filhotes se aconchegam perto de você e até um macho ferido inclina a cabeça em respeito. O grupo murmura em uníssono, um chamado ancestral. Eles estão lhe oferecendo algo raro: a liderança do grupo.",
+                        scenery: "Sua decisão ecoa pelo abrigo. O grupo murmura em uníssono, um chamado ancestral. Eles estão lhe oferecendo algo raro: a liderança do grupo.",
                         scene: "BrownDinosaur",
                         option1: "Aceitar",
                         option2: "Recusar",
@@ -161,7 +161,7 @@ struct ContentView: View {
                     )
                 case "Hide":
                     CardView(
-                        scenery: "Você engole os últimos pedaços de as escondidas, mas um som grave furioso interrompe sua refeição. O líder do bando sabe o que você fez. Você pode tentar enfrentá-lo em um duelo ou fugir para as planícies solitárias, onde a tempestade e predadores não terão piedade.",
+                        scenery: "Você engole os últimos pedaços as escondidas, mas um som furioso interrompe sua refeição. O líder do bando sabe o que você fez. Você pode tentar enfrentá-lo em um duelo ou fugir.",
                         scene: "BrownDinosaur",
                         option1: "Desafiar",
                         option2: "Fugir",
@@ -174,7 +174,7 @@ struct ContentView: View {
                 default:
                     if count != 0 && winView {
                         FinalCardView(
-                            scenario: "Parabéns, Sobrevivente do Triássico! Suas escolhas sábias sob tempestades, ataques de predadores e escassez de alimento provaram que você domina a arte da sobrevivência pré-histórica. Cada decisão estratégica moldou um herbívoro verdadeiramente resiliente.\n\nSua jornada continua... mas agora, com um dinossauro da era jurassica/ cretácia!",
+                            scenario: "Parabéns, Sobrevivente do Triássico! Suas escolhas sábias sob tempestades, ataques de predadores e escassez de alimento provaram que você domina a arte da sobrevivência pré-histórica. Cada decisão estratégica moldou um herbívoro verdadeiramente resiliente.",
                             scene: "loadingDino",
                             width: 200,
                             height: 200

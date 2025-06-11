@@ -22,89 +22,112 @@ struct CardView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Color.brownBackground
-                    .ignoresSafeArea()
-                
-                VStack {
-                    HStack {
-                        HStack {
-                            Image(systemName: "flame.fill")
-                                .font(.title)
-                                .foregroundColor(.orangeBright)
-                            RoundedRectangle(cornerRadius: 25.0)
-                                .frame(width: 180, height: 14)
-                                .foregroundColor(.lightBackground)
-                        }
-                        Spacer()
-                        NavigationLink {
-                            DinodexView()
-                        } label: {
-                            ZStack {
-                                Circle()
-                                    .frame(width: 40, height: 45)
-                                    .foregroundColor(.accentColor)
-                                Image("dino.egg")
-                                    .font(.title)
-                                    .foregroundColor(.black)
-                            }
-                        }
-                    }.padding(20)
+        GeometryReader { geometry in
+            NavigationStack {
+                ZStack {
+                    Color.brownBackground
+                        .ignoresSafeArea()
                     
-                    ZStack {
-                        Rectangle()
-                            .frame(width: 380, height: 600)
-                            .foregroundColor(.brownSecondary)
-                        VStack {
-                            Text(scenery)
-                                .frame(width: 320)
-                                .foregroundColor(.lightBackground)
-                                .fontWeight(.bold)
-                                .padding(.bottom)
-                                .multilineTextAlignment(.center)
-                            ZStack {
+                    VStack {
+                        HStack {
+                            HStack {
+                                Image(systemName: "flame.fill")
+                                    .font(.title)
+                                    .foregroundColor(.orangeBright)
                                 RoundedRectangle(cornerRadius: 25.0)
+                                    .frame(width: 180, height: 14)
                                     .foregroundColor(.lightBackground)
-                                    .frame(width: 330, height: 350)
-                                Image(scene)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: imgWidth, height: imgHeight)
+                            }
+                            Spacer()
+                            NavigationLink {
+                                DinodexView()
+                            } label: {
+                                ZStack {
+                                    Circle()
+                                        .frame(width: 40, height: 45)
+                                        .foregroundColor(.accentColor)
+                                    Image("dino.egg")
+                                        .font(.title)
+                                        .foregroundColor(.black)
+                                }
+                            }
+                        }.padding(20)
+                        
+                        ZStack {
+                            if geometry.size.height < 800 {
+                                Rectangle()
+                                    .frame(width: geometry.size.width, height: geometry.size.height * 0.7)
+                                    .foregroundColor(.brownSecondary)
+                            } else {
+                                Rectangle()
+                                    .frame(width: geometry.size.width, height: geometry.size.height * 0.8)
+                                    .foregroundColor(.brownSecondary)
+                            }
+                            VStack {
+                                if geometry.size.height < 800 {
+                                    Text(scenery)
+                                        .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.25)
+                                        .foregroundColor(.lightBackground)
+                                        .fontWeight(.bold)
+                                        .padding(.bottom)
+                                        .multilineTextAlignment(.center)
+                                } else {
+                                    Text(scenery)
+                                        .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.2)
+                                        .foregroundColor(.lightBackground)
+                                        .fontWeight(.bold)
+                                        .padding(.bottom)
+                                        .multilineTextAlignment(.center)
+                                }
+                                ZStack {
+                                    if geometry.size.height < 800 {
+                                        RoundedRectangle(cornerRadius: 25.0)
+                                            .foregroundColor(.lightBackground)
+                                            .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.4)
+                                    } else {
+                                        RoundedRectangle(cornerRadius: 25.0)
+                                            .foregroundColor(.lightBackground)
+                                            .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.5)
+                                    }
+                                    Image(scene)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: geometry.size.width * 0.35, height: geometry.size.height * 0.35)
+                                }
                             }
                         }
+                        HStack {
+                            Button(action: {
+                                decision = 1
+                                isDone.toggle()
+                            }, label: {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 25.0)
+                                        .frame(width: 150, height: 50)
+                                    
+                                    Text(option1)
+                                        .font(.headline)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.black)
+                                }
+                            })
+                            
+                            Spacer()
+                            Button(action: {
+                                decision = -1
+                                isDone.toggle()
+                            }, label: {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 25.0)
+                                        .frame(width: 150, height: 50)
+                                    Text(option2)
+                                        .font(.headline)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.black)
+                                }
+                            })
+                        }.padding(20)
                     }
-                    HStack {
-                        Button(action: {
-                            decision = 1
-                            isDone.toggle()
-                        }, label: {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 25.0)
-                                    .frame(width: 150, height: 50)
-                                
-                                Text(option1)
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.black)
-                            }
-                        })
-                        
-                        Spacer()
-                        Button(action: {
-                            decision = -1
-                            isDone.toggle()
-                        }, label: {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 25.0)
-                                    .frame(width: 150, height: 50)
-                                Text(option2)
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.black)
-                            }
-                        })
-                    }.padding(20)
                 }
             }
         }
