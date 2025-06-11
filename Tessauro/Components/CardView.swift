@@ -54,20 +54,41 @@ struct CardView: View {
                         }.padding(20)
                         
                         ZStack {
-                            Rectangle()
-                                .frame(width: geometry.size.width, height: geometry.size.height * 0.7)
-                                .foregroundColor(.brownSecondary)
+                            if geometry.size.height < 800 {
+                                Rectangle()
+                                    .frame(width: geometry.size.width, height: geometry.size.height * 0.7)
+                                    .foregroundColor(.brownSecondary)
+                            } else {
+                                Rectangle()
+                                    .frame(width: geometry.size.width, height: geometry.size.height * 0.8)
+                                    .foregroundColor(.brownSecondary)
+                            }
                             VStack {
-                                Text(scenery)
-                                    .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.25)
-                                    .foregroundColor(.lightBackground)
-                                    .fontWeight(.bold)
-                                    .padding(.bottom)
-                                    .multilineTextAlignment(.center)
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 25.0)
+                                if geometry.size.height < 800 {
+                                    Text(scenery)
+                                        .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.25)
                                         .foregroundColor(.lightBackground)
-                                        .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.4)
+                                        .fontWeight(.bold)
+                                        .padding(.bottom)
+                                        .multilineTextAlignment(.center)
+                                } else {
+                                    Text(scenery)
+                                        .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.2)
+                                        .foregroundColor(.lightBackground)
+                                        .fontWeight(.bold)
+                                        .padding(.bottom)
+                                        .multilineTextAlignment(.center)
+                                }
+                                ZStack {
+                                    if geometry.size.height < 800 {
+                                        RoundedRectangle(cornerRadius: 25.0)
+                                            .foregroundColor(.lightBackground)
+                                            .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.4)
+                                    } else {
+                                        RoundedRectangle(cornerRadius: 25.0)
+                                            .foregroundColor(.lightBackground)
+                                            .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.5)
+                                    }
                                     Image(scene)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
