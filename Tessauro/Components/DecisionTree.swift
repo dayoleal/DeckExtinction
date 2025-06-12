@@ -117,13 +117,15 @@ class Tree: ObservableObject {
                     print("esse e o resultado: \(resultado)")
                 }
                 
-                if decisionBool4 {
-                    let die = kick?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
-                    let die2 = kick?.createBranch(value: NSNumber(value: false), attribute: "Die" as NSString)
-                }else {
-                    let diee = bite?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
-                    let diee2 = bite?.createBranch(value: NSNumber(value: false), attribute: "Die" as NSString)
-                }
+//                if decisionBool4 {
+//                    let die = kick?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
+//                    let die2 = kick?.createBranch(value: NSNumber(value: false), attribute: "Die" as NSString)
+//                }else {
+//                    let diee = bite?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
+//                    let diee2 = bite?.createBranch(value: NSNumber(value: false), attribute: "Die" as NSString)
+//                }
+                
+                win = false
             }
             else {
                 let mud = run?.createBranch(value: NSNumber(value: true), attribute: "Mud" as NSString)
@@ -142,8 +144,9 @@ class Tree: ObservableObject {
                 }
                 
                 if decisionBool4 {
-                    let die3 = mud?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
-                    let die4 = mud?.createBranch(value: NSNumber(value: false), attribute: "Die" as NSString)
+//                    let die3 = mud?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
+//                    let die4 = mud?.createBranch(value: NSNumber(value: false), attribute: "Die" as NSString)
+                    win = false
                 }
                 else {
                     let egg = shelter?.createBranch(value: NSNumber(value: true), attribute: "Egg" as NSString)
@@ -163,8 +166,9 @@ class Tree: ObservableObject {
                     }
                     
                     if decisionBool5 {
-                        let die5 = egg?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
-                        let die6 = egg?.createBranch(value: NSNumber(value: false), attribute: "Die" as NSString)
+//                        let die5 = egg?.createBranch(value: NSNumber(value: true), attribute: "Die" as NSString)
+//                        let die6 = egg?.createBranch(value: NSNumber(value: false), attribute: "Die" as NSString)
+                        win = false
                     }
                     else {
                         win = true
