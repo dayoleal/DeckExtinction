@@ -31,12 +31,12 @@ struct CardView: View {
                     VStack {
                         HStack {
                             HStack {
-                                Image(systemName: "flame.fill")
-                                    .font(.title)
-                                    .foregroundColor(.orangeBright)
-                                RoundedRectangle(cornerRadius: 25.0)
-                                    .frame(width: 180, height: 14)
-                                    .foregroundColor(.lightBackground)
+//                                Image(systemName: "flame.fill")
+//                                    .font(.title)
+//                                    .foregroundColor(.orangeBright)
+//                                RoundedRectangle(cornerRadius: 25.0)
+//                                    .frame(width: 180, height: 14)
+//                                    .foregroundColor(.lightBackground)
                             }
                             Spacer()
                             NavigationLink {
@@ -54,13 +54,13 @@ struct CardView: View {
                         }.padding(20)
                         
                         ZStack {
-                            if geometry.size.height < 800 {
+                            if geometry.size.height < 750 {
                                 Rectangle()
                                     .frame(width: geometry.size.width, height: geometry.size.height * 0.7)
                                     .foregroundColor(.brownSecondary)
                             } else {
                                 Rectangle()
-                                    .frame(width: geometry.size.width, height: geometry.size.height * 0.8)
+                                    .frame(width: geometry.size.width, height: geometry.size.height * 0.75)
                                     .foregroundColor(.brownSecondary)
                             }
                             VStack {
@@ -92,6 +92,7 @@ struct CardView: View {
                                         .aspectRatio(contentMode: .fill)
                                         .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.3)
                                 }
+                                .padding(.bottom)
                             }
                         }
                         HStack {
