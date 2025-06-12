@@ -102,7 +102,7 @@ struct ContentView: View {
                 case "EggAlternative":
                     CardView(
                         scenery: "Você alcança os ovos, mas então, um rugido gutural corta o vento. Dentre as árvores, o dono dos ovos surge: um Herrerasauro adulto! Ele corre em sua direção. Você tem que decidir entre devorar os ovos, ou fugir.",
-                        scene: "egg",
+                        scene: "carnivoreScene",
                         option1: "Comer",
                         option2: "Fugir",
                         imgWidth: 400,
@@ -114,7 +114,7 @@ struct ContentView: View {
                 case "RunAlternative":
                     CardView(
                         scenery: "O herrerasauro continua a te caçar. Você sabe que o abrigo está perto,onde outros Plateossauros podem te ajudar. Mas será que ouvirão seu chamado? Ou é melhor confiar na sua velocidade e chegar lá antes que ele te alcance?",
-                        scene: "carnivoreScene",
+                        scene: "attackScene",
                         option1: "Ajuda",
                         option2: "Sozinho",
                         imgWidth: 250,
@@ -138,7 +138,7 @@ struct ContentView: View {
                 case "PlantAlternative":
                     CardView(
                         scenery: "Você mastiga a planta ressecada, mal saciando sua fome. No canto escuro da caverna, filhotes de Plateossauro resmungam famintos. O pouco que resta em suas patas poderia ser dividido ou escondido antes que os outros notem.",
-                        scene: "BrownDinosaur",
+                        scene: "Children",
                         option1: "Dividir",
                         option2: "Esconder",
                         imgWidth: 250,
@@ -162,7 +162,7 @@ struct ContentView: View {
                 case "Hide":
                     CardView(
                         scenery: "Você engole os últimos pedaços as escondidas, mas um som furioso interrompe sua refeição. O líder do bando sabe o que você fez. Você pode tentar enfrentá-lo em um duelo ou fugir.",
-                        scene: "BrownDinosaur",
+                        scene: "LeaderAttack",
                         option1: "Desafiar",
                         option2: "Fugir",
                         imgWidth: 250,
@@ -183,7 +183,7 @@ struct ContentView: View {
                     else if count != 0 {
                         FinalCardView(
                             scenario: "Aqui jaz um Plateossauro que cometeu um erro de comportamento. Análise sedimentar prova que sua última decisão foi fatal para muitos dos herbívoros neste ecossistema.",
-                            scene: "loadingDino",
+                            scene: "Fossil",
                             width: 200,
                             height: 200
                         )

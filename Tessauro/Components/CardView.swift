@@ -30,14 +30,6 @@ struct CardView: View {
                     
                     VStack {
                         HStack {
-                            HStack {
-//                                Image(systemName: "flame.fill")
-//                                    .font(.title)
-//                                    .foregroundColor(.orangeBright)
-//                                RoundedRectangle(cornerRadius: 25.0)
-//                                    .frame(width: 180, height: 14)
-//                                    .foregroundColor(.lightBackground)
-                            }
                             Spacer()
                             NavigationLink {
                                 DinodexView()
@@ -81,16 +73,16 @@ struct CardView: View {
                                     if geometry.size.height < 800 {
                                         RoundedRectangle(cornerRadius: 25.0)
                                             .foregroundColor(.lightBackground)
-                                            .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.37)
+                                            .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.4)
                                     } else {
                                         RoundedRectangle(cornerRadius: 25.0)
                                             .foregroundColor(.lightBackground)
-                                            .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.37)
+                                            .frame(width: geometry.size.width * 0.83, height: geometry.size.height * 0.45)
                                     }
                                     Image(scene)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.3)
+                                        .frame(width: geometry.size.width * 0.35, height: geometry.size.height * 0.35)
                                 }
                                 .padding(.bottom)
                             }
