@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06BD51DF2E00AADD00B8A69E /* CardFlip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD51DE2E00AADD00B8A69E /* CardFlip.swift */; };
 		5515DC742DEF8E8C00E3FD13 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515DC732DEF8E8C00E3FD13 /* TutorialView.swift */; };
 		559A39202DE8E8EE00D78387 /* TessauroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A391F2DE8E8EE00D78387 /* TessauroApp.swift */; };
 		559A39222DE8E8EE00D78387 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A39212DE8E8EE00D78387 /* ContentView.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		0635E08C2DF8AE6C004EC214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		06BD51DE2E00AADD00B8A69E /* CardFlip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlip.swift; sourceTree = "<group>"; };
 		5515DC732DEF8E8C00E3FD13 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		559A391C2DE8E8EE00D78387 /* Tessauro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tessauro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		559A391F2DE8E8EE00D78387 /* TessauroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TessauroApp.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		55E4E6E62DEF57E60039C008 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				06BD51DE2E00AADD00B8A69E /* CardFlip.swift */,
 				8490F2082DF2277A006A753E /* CardViewAlternative.swift */,
 				84A0CF402DF217D1009FC4CC /* CardView.swift */,
 				842D96732DF0C1C80018E40F /* decisionTree.swift */,
@@ -177,6 +180,7 @@
 			files = (
 				559A39222DE8E8EE00D78387 /* ContentView.swift in Sources */,
 				55E4E6E82DEF580A0039C008 /* Indicators.swift in Sources */,
+				06BD51DF2E00AADD00B8A69E /* CardFlip.swift in Sources */,
 				559A39322DEA42DA00D78387 /* HomeView.swift in Sources */,
 				842D96742DF0C1CC0018E40F /* decisionTree.swift in Sources */,
 				559A39202DE8E8EE00D78387 /* TessauroApp.swift in Sources */,

@@ -10,6 +10,8 @@ struct ContentView: View {
     @State var decision7: Int = 0
     @State var decision8: Int = 0
     
+    @State var flip: Bool = false
+
     @State var isDone: Bool = false
     @State var count: Int = 0
     
@@ -32,8 +34,10 @@ struct ContentView: View {
                         imgWidth: 370,
                         imgHeight: 300,
                         decision: $decision2,
-                        isDone: $isDone
+                        isDone: $isDone,
+                        flip:$flip
                     )
+
                 case "Alone":
                     CardView(
                         scenery: "O céu escurecia quando surge um Herrerasauro! À sua direita, rochas escarpadas oferecem escape se conseguir escalar a tempo. Ou você pode tentar atacá-lo!",
@@ -43,7 +47,9 @@ struct ContentView: View {
                         imgWidth: 250,
                         imgHeight: 280,
                         decision: $decision3,
-                        isDone: $isDone
+                        isDone: $isDone,
+                        flip:$flip
+
                     )
                 case "Attack":
                     CardView(
@@ -54,7 +60,9 @@ struct ContentView: View {
                         imgWidth: 230,
                         imgHeight: 250,
                         decision: $decision4,
-                        isDone: $isDone
+                        isDone: $isDone,
+                        flip:$flip
+
                     )
                 case "Run":
                     CardView(
@@ -65,18 +73,22 @@ struct ContentView: View {
                         imgWidth: 250,
                         imgHeight: 250,
                         decision: $decision4,
-                        isDone: $isDone
+                        isDone: $isDone,
+                        flip:$flip
+
                     )
                 case "Shelter":
                     CardView(
                         scenery: "Um rugido faminto ecoava em suas entranhas. Entre as rochas, apenas tufos de samambaia ressecada pareciam disponíveis. Mas lá fora, um ninho destruído revela um ovo intacto, perto o suficiente para você alcançá-lo.",
-                        scene: "egg ",
+                        scene: "egg",
                         option1: "Ovo",
                         option2: "Samambaia",
                         imgWidth: 400,
                         imgHeight: 350,
                         decision: $decision5,
-                        isDone: $isDone
+                        isDone: $isDone,
+                        flip:$flip
+
                     )
                 case "Group":
                     CardView(scenery: "Uma tempestade se aproxima quando você avista Plantas medicinais. Deseja arriscar-se na lama para adquirí-la ou seguir para uma caverna próxima, onde outros herbívoros já se aglomeram para abrigo?",
@@ -86,7 +98,10 @@ struct ContentView: View {
                              imgWidth: 280,
                              imgHeight: 280,
                              decision: $decision3,
-                             isDone: $isDone)
+                             isDone: $isDone,
+                             flip:$flip
+
+                    )
                     
                 case "ShelterAlternative":
                     CardView(
@@ -97,7 +112,9 @@ struct ContentView: View {
                         imgWidth: 400,
                         imgHeight: 350,
                         decision: $decision4,
-                        isDone: $isDone
+                        isDone: $isDone,
+                        flip:$flip
+
                     )
                 case "EggAlternative":
                     CardView(
@@ -108,7 +125,9 @@ struct ContentView: View {
                         imgWidth: 400,
                         imgHeight: 350,
                         decision: $decision5,
-                        isDone: $isDone
+                        isDone: $isDone,
+                        flip:$flip
+
                     )
                     
                 case "RunAlternative":
@@ -120,7 +139,9 @@ struct ContentView: View {
                         imgWidth: 250,
                         imgHeight: 250,
                         decision: $decision6,
-                        isDone: $isDone
+                        isDone: $isDone,
+                        flip:$flip
+
                         
                     )
                 case "CallHelp":
@@ -132,7 +153,9 @@ struct ContentView: View {
                         imgWidth: 250,
                         imgHeight: 280,
                         decision: $decision7,
-                        isDone: $isDone
+                        isDone: $isDone,
+                        flip:$flip
+
                         
                     )
                 case "PlantAlternative":
@@ -144,7 +167,9 @@ struct ContentView: View {
                         imgWidth: 250,
                         imgHeight: 280,
                         decision: $decision5,
-                        isDone: $isDone
+                        isDone: $isDone,
+                        flip:$flip
+
                         
                     )
                 case "Share":
@@ -156,7 +181,9 @@ struct ContentView: View {
                         imgWidth: 250,
                         imgHeight: 280,
                         decision: $decision6,
-                        isDone: $isDone
+                        isDone: $isDone,
+                        flip:$flip
+
                         
                     )
                 case "Hide":
@@ -168,9 +195,10 @@ struct ContentView: View {
                         imgWidth: 250,
                         imgHeight: 280,
                         decision: $decision6,
-                        isDone: $isDone
-                        
+                        isDone: $isDone,
+                        flip:$flip
                     )
+                    
                 default:
                     if count != 0 && winView {
                         FinalCardView(
@@ -191,7 +219,16 @@ struct ContentView: View {
                 }
                 
                 if count == 0 {
-                    CardView(scenery: "Seu estômago ruge enquanto você avista duas fontes de alimento: um campo de grama tenra ou folhas suculentas nas árvores altas. Escolha sabiamente, sua decisão afetará sua energia e evolução!", scene: "landscape", option1: "Gramado", option2: "Folhas", imgWidth: 250, imgHeight: 250, decision: $decision1, isDone: $isDone)
+                    CardView(
+                        scenery: "Seu estômago ruge enquanto você avista duas fontes de alimento: um campo de grama tenra ou folhas suculentas nas árvores altas. Escolha sabiamente, sua decisão afetará sua energia e evolução!",
+                        scene: "landscape",
+                        option1: "Gramado",
+                        option2: "Folhas",
+                        imgWidth: 250,
+                        imgHeight: 250,
+                        decision: $decision1,
+                        isDone: $isDone,
+                        flip:$flip)
                 }
             }
         }.navigationBarBackButtonHidden(true)
